@@ -1,0 +1,439 @@
+pageInfo:
+  title: LAN of OZ · Mission Control
+  description: The Empire, Live
+appConfig:
+  theme: glass
+  customColors:
+    glass:
+      primary: '#00eaff'
+      background: '#04040a'
+      background-darker: '#020207'
+      info: '#00eaff'
+      success: '#50fa7b'
+      warning: '#ffb86c'
+      error: '#ff5566'
+      danger: '#ff5566'
+      neutral: '#1a2140'
+      white: '#fff'
+      black: '#000'
+      item-group-background: rgba(10,14,28,0.55)
+      medium-grey: '#7e8ab0'
+      item-background: rgba(18,22,38,0.55)
+      item-background-hover: rgba(0,234,255,0.10)
+      transparent-70: rgba(0,0,0,0.70)
+      transparent-50: rgba(0,0,0,0.50)
+      transparent-30: rgba(0,0,0,0.30)
+      transparent-white-70: rgba(217,228,255,0.70)
+      transparent-white-50: rgba(217,228,255,0.50)
+      transparent-white-30: rgba(217,228,255,0.30)
+      transparent-white-10: rgba(217,228,255,0.08)
+      heading-text-color: '#ffffff'
+      nav-link-text-color: '#d9e4ff'
+      nav-link-background-color: rgba(0,234,255,0.06)
+      nav-link-text-color-hover: '#00eaff'
+      nav-link-background-color-hover: rgba(0,234,255,0.14)
+      nav-link-border-color: rgba(0,234,255,0.12)
+      nav-link-border-color-hover: '#00eaff'
+      nav-link-shadow: '0 0 12px rgba(0,0,0,0.6)'
+      nav-link-shadow-hover: '0 0 18px rgba(0,234,255,0.35)'
+      item-text-color: '#d9e4ff'
+      item-text-color-hover: '#ffffff'
+      item-group-outer-background: rgba(6,10,22,0.55)
+      item-group-heading-text-color: '#00eaff'
+      item-group-heading-text-color-hover: '#ffffff'
+      settings-text-color: '#d9e4ff'
+      settings-background: rgba(4,4,10,0.85)
+      config-settings-color: '#d9e4ff'
+      config-settings-background: rgba(7,8,15,0.95)
+      config-code-color: '#d9e4ff'
+      config-code-background: '#07080f'
+      code-editor-color: '#d9e4ff'
+      code-editor-background: '#07080f'
+      widget-text-color: '#d9e4ff'
+      widget-background-color: rgba(10,14,28,0.55)
+      widget-accent-color: '#00eaff'
+      widget-base-background: transparent
+      interactive-editor-color: '#d9e4ff'
+      interactive-editor-background: '#07080f'
+      interactive-editor-background-darker: '#04040a'
+      cloud-backup-color: '#d9e4ff'
+      cloud-backup-background: rgba(10,14,28,0.95)
+      search-container-background: transparent
+      search-field-background: rgba(10,14,28,0.7)
+      search-label-color: '#d9e4ff'
+      footer-text-color: '#7e8ab0'
+      footer-text-color-link: '#00eaff'
+      footer-background: transparent
+      context-menu-background: rgba(7,8,15,0.98)
+      context-menu-color: '#d9e4ff'
+      context-menu-secondary-color: '#00eaff'
+      side-bar-background: '#04040a'
+      side-bar-background-lighter: '#07080f'
+      side-bar-color: '#d9e4ff'
+      side-bar-item-background: rgba(0,234,255,0.06)
+      side-bar-item-color: '#d9e4ff'
+      workspace-web-content-background: '#04040a'
+      minimal-view-background-color: transparent
+      minimal-view-title-color: '#ffffff'
+      minimal-view-settings-color: '#d9e4ff'
+      minimal-view-section-heading-color: '#00eaff'
+      minimal-view-section-heading-background: rgba(0,234,255,0.06)
+      minimal-view-search-background: rgba(10,14,28,0.7)
+      minimal-view-search-color: '#d9e4ff'
+      minimal-view-group-color: '#d9e4ff'
+      minimal-view-group-background: rgba(0,234,255,0.06)
+      login-form-color: '#d9e4ff'
+      login-form-background: '#04040a'
+      login-form-background-secondary: '#07080f'
+      about-page-color: '#d9e4ff'
+      about-page-background: '#04040a'
+      about-page-accent: '#00eaff'
+      scroll-bar-color: '#00eaff'
+      scroll-bar-background: '#07080f'
+      highlight-color: '#04040a'
+      highlight-background: '#00eaff'
+      progress-bar: '#00eaff'
+      loading-screen-color: '#00eaff'
+      loading-screen-background: '#04040a'
+      status-check-tooltip-background: '#07080f'
+      status-check-tooltip-color: '#d9e4ff'
+      welcome-popup-background: '#07080f'
+      welcome-popup-text-color: '#d9e4ff'
+      toast-background: '#00eaff'
+      toast-color: '#04040a'
+      description-tooltip-background: '#07080f'
+      description-tooltip-color: '#d9e4ff'
+      outline-color: rgba(0,234,255,0.18)
+      curve-factor: 3px
+      curve-factor-navbar: 3px
+      curve-factor-small: 2px
+      dimming-factor: '0.75'
+      scroll-bar-width: 8px
+      header-height: 5.6rem
+      footer-height: 72px
+      item-group-padding: 6px
+      item-shadow: '0 0 10px rgba(0,0,0,0.55)'
+      item-hover-shadow: '0 0 18px rgba(0,234,255,0.25)'
+      item-icon-transform: drop-shadow(0 0 6px rgba(0,0,0,0.55)) saturate(0.95)
+      item-icon-transform-hover: drop-shadow(0 0 10px rgba(0,234,255,0.45)) saturate(1.15)
+      item-group-shadow: 0 0 24px rgba(0,0,0,0.55)
+      context-menu-shadow: 0 0 18px rgba(0,0,0,0.7)
+      section-max-height: 4000px
+      settings-container-shadow: 0 0 24px rgba(0,0,0,0.5)
+      side-bar-width: 3.5rem
+      tooltip-arrow-size: 6px
+      tooltip-width: 260px
+      tooltip-padding: 0.3rem
+      font-body: '"DaddyTimeMono Nerd Font","Segoe UI","Arial","sans-serif"'
+      font-headings: '"Raleway","Arial","sans-serif"'
+      font-monospace: '"DroidSansM Nerd Font Mono","Courier New",monospace'
+  layout: vertical
+  iconSize: medium
+  faviconApi: allesedv
+  defaultIcon: generative
+  enableFontAwesome: true
+  enableMaterialDesignIcons: true
+  statusCheck: true
+  statusCheckInterval: 60
+
+sections:
+
+  - name: ◈ OZ MONITOR · Live Telemetry
+    icon: fas fa-satellite-dish
+    displayData:
+      sectionLayout: auto
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    widgets:
+      - type: iframe
+        options:
+          url: http://10.0.0.15:7654/
+          frameHeight: 820
+
+  - name: ◇ INFRASTRUCTURE
+    icon: fas fa-server
+    displayData:
+      sortBy: default
+      rows: 2
+      cols: 5
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: Proxmox VE
+        description: Hypervisor · tod
+        icon: hl-proxmox
+        url: https://tod.oz.alisium.run
+        statusCheck: true
+        statusCheckUrl: http://10.0.0.15:8005
+        statusCheckAllowInsecure: true
+      - title: Synology DSM
+        description: NAS · 10.0.0.10
+        icon: hl-synology
+        url: http://10.0.0.10:5000
+        statusCheckAllowInsecure: true
+        hotkey: 2
+      - title: TrueNAS
+        description: Storage · 10.0.0.8
+        url: http://10.0.0.8/ui/system/update
+        icon: hl-truenas
+        statusCheckAllowInsecure: true
+      - title: Ubiquiti EdgeRouter
+        description: Gateway · 10.0.0.1
+        icon: hl-unifi
+        url: https://10.0.0.1/#Dashboard
+        statusCheck: true
+        statusCheckUrl: 10.0.0.1:80
+      - title: OpenWrt LuCI
+        description: Router · 10.0.0.50
+        url: http://10.0.0.50/cgi-bin/luci/admin/system/opkg
+        icon: hl-openwrt
+        statusCheck: true
+      - title: Tailscale
+        description: Mesh VPN Admin
+        url: https://login.tailscale.com/admin/machines
+        icon: si-tailscale
+        statusCheck: true
+      - title: Cloudflare
+        description: DNS · Edge · WAF
+        url: https://dash.cloudflare.com/
+        icon: si-cloudflare
+        statusCheck: true
+      - title: Wasabi
+        description: Cold Storage
+        url: https://console.wasabisys.com/dashboard
+        icon: favicon
+        statusCheck: true
+      - title: Dashy
+        description: This Dashboard
+        url: http://10.0.0.4:4000/
+        icon: hl-dashy
+        statusCheck: true
+      - title: Proxmox Scripts
+        description: Community Scripts
+        url: https://community-scripts.github.io/ProxmoxVE/scripts
+        icon: favicon
+        statusCheck: true
+
+  - name: ◆ SERVICES
+    icon: fas fa-cubes
+    displayData:
+      sortBy: default
+      rows: 2
+      cols: 5
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: Caddy
+        description: Reverse Proxy · 1000
+        icon: si-caddy
+        url: http://10.0.0.15:8006
+        statusCheck: false
+      - title: Technitium DNS
+        description: Primary · 105
+        icon: fas fa-server
+        url: http://10.0.0.15:5380
+        statusCheck: false
+      - title: n8n
+        description: Automation · 113
+        icon: si-n8n
+        url: http://10.0.0.15:5678
+        statusCheck: false
+      - title: Docker
+        description: Containers · 115
+        icon: si-docker
+        url: http://10.0.0.15:9000
+        statusCheck: false
+      - title: PatchMon
+        description: Patch Mgmt · 128
+        icon: fas fa-shield-alt
+        url: http://10.0.0.15:3100
+        statusCheck: false
+      - title: Searxng
+        description: Private Search · 124
+        icon: si-searxng
+        url: http://10.0.0.15:8080
+        statusCheck: false
+      - title: ntfy
+        description: Push Notify · 117
+        icon: fas fa-bell
+        url: http://10.0.0.15:8081
+        statusCheck: false
+      - title: IT Tools
+        description: Utilities · 103
+        url: http://10.0.0.7/
+        icon: favicon
+        statusCheck: true
+      - title: Cockpit
+        description: Admin · 111
+        icon: fas fa-gears
+        url: http://10.0.0.15:9090
+        statusCheck: false
+      - title: MySpeed
+        description: Speed Test · 101
+        icon: fas fa-gauge-high
+        url: http://10.0.0.15:5216
+        statusCheck: false
+
+  - name: ◉ SECURITY
+    icon: fas fa-shield-halved
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 5
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: Wazuh
+        description: SIEM · 127
+        icon: fas fa-radar
+        url: https://10.0.0.15
+        statusCheck: false
+      - title: Panopticon
+        description: Observability · 3000
+        icon: fas fa-eye
+        url: http://10.0.0.15:3000
+        statusCheck: false
+      - title: Yubal
+        description: 2FA Tools · 129
+        icon: fas fa-key
+        url: http://10.0.0.15
+        statusCheck: false
+
+  - name: ▶ MEDIA
+    icon: fas fa-film
+    displayData:
+      sortBy: default
+      rows: 2
+      cols: 5
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: PlexIQ
+        description: Media Scorer · 125
+        icon: fas fa-star-half-stroke
+        url: http://10.0.0.15:3000
+        statusCheck: false
+      - title: Overseerr
+        description: Requests · 118
+        icon: si-overseerr
+        url: http://10.0.0.15:5055
+        statusCheck: false
+      - title: Navidrome
+        description: Music · 130
+        icon: si-navidrome
+        url: http://10.0.0.15:4533
+        statusCheck: false
+      - title: Lyrion Music
+        description: Squeezebox · 126
+        icon: fas fa-music
+        url: http://10.0.0.15:9000
+        statusCheck: false
+      - title: Fladder
+        description: Jellyfin · 116
+        icon: si-jellyfin
+        url: http://10.0.0.15:8096
+        statusCheck: false
+      - title: Booklore
+        description: Books · 122
+        icon: fas fa-book
+        url: http://10.0.0.15:8080
+        statusCheck: false
+      - title: Arrstack
+        description: Indexers · 2303
+        icon: fas fa-bolt
+        url: http://10.0.0.15:9696
+        statusCheck: false
+
+  - name: ⌘ AI & DEV
+    icon: fas fa-brain
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 5
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: Oz
+        description: The Beautiful Witch · 899
+        icon: fas fa-hat-wizard
+        url: http://10.0.0.15
+        statusCheck: false
+      - title: CODE-SERVER
+        description: VSCode Web · 136
+        icon: si-visualstudiocode
+        url: http://10.0.0.15:8443
+        statusCheck: false
+      - title: OpenDevin
+        description: AI Engineer · 2300
+        icon: fas fa-robot
+        url: http://10.0.0.15:3000
+        statusCheck: false
+      - title: Gitea Mirror
+        description: Git · 102
+        icon: si-gitea
+        url: http://10.0.0.15:3000
+        statusCheck: false
+      - title: ChatGPT
+        description: OpenAI
+        icon: si-openai
+        url: https://chatgpt.com/
+        statusCheckUrl: https://status.openai.com/
+      - title: Grok
+        description: xAI
+        icon: favicon
+        url: https://grok.com/
+        statusCheck: true
+      - title: Hugging Face
+        description: Models
+        icon: si-huggingface
+        url: https://huggingface.co/
+
+  - name: ⬡ EXTERNAL
+    icon: fas fa-globe
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 5
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: itwerks.net
+        description: Captain's IT Business
+        icon: font-awesome
+        url: https://itwerks.net/
+        statusCheck: true
+      - title: ajricardo.com
+        description: Personal Site
+        url: https://ajricardo.com/
+        icon: favicon
+        statusCheck: true
+      - title: Zoho Admin
+        description: Mail
+        url: https://mailadmin.zoho.com/cpanel/home.do#users/list
+        icon: favicon
+        statusCheck: true
+      - title: YouTube
+        url: https://www.youtube.com/
+        icon: fab fa-youtube
+        statusCheck: true
+      - title: SceneTime
+        url: https://scenetime.com/
+        icon: favicon
+        statusCheck: true
+      - title: Website Planet
+        url: https://www.websiteplanet.com/
+        icon: favicon
+        statusCheck: true
+
+widgets:
+  - type: clock
+    options:
+      timeZone: America/Chicago
+      format: en-US
+      hideDate: false
+  - type: iframe
+    options:
+      url: https://today.zenquotes.io/api
+      frameHeight: 200

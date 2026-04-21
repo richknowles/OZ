@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>azucar-fantastico</title>
+<style>
+  :root {
+    --bg:       #161622;
+    --bar-h:    44px;
+    --mono:     "JetBrains Mono", "FiraCode Nerd Font", "Fira Code", "Droid Sans Mono", monospace;
+    --idle:     #6272a4;
+    --rx1:      #8be9fd;
+    --rx2:      #50fa7b;
+    --rx3:      #ffb86c;
+    --rx4:      #ff5555;
+    --tx1:      #ff79c6;
+    --tx2:      #bd93f9;
+    --tx3:      #ffb86c;
+    --tx4:      #ff5555;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    height: 100%;
+    background: var(--bg);
+    color: #f8f8f2;
+    font-family: var(--mono);
+    font-size: 13px;
+    overflow: hidden;
+  }
+
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    padding: 6px 14px;
+    gap: 5px;
+  }
+
+  .row {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    white-space: nowrap;
+    line-height: 1;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+  }
+
+  .arrow { color: var(--idle); font-size: 11px; }
+  .sparks { letter-spacing: 0.02em; }
+  .sparks span { display: inline-block; }
+
+  .speeds {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    font-size: 10px;
+    color: var(--idle);
+    letter-spacing: 0.08em;
+  }
+  .speeds .rx { color: var(--rx2); }
+  .speeds .tx { color: var(--tx2); }
+
+  .status {
+    font-size: 9px;
+    color: #44475a;
+    letter-spacing: 0.15em;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="bar">
+  <div class="row">
+    <span class="arrow">⬇</span>
+    <span class="sparks" id="rx-sparks"></span>
+    &nbsp;
+    <span class="arrow">⬆</span>
+    <span class="sparks" id="tx-sparks"></span>
+  </div>
+  <div class="speeds">
+    <span class="rx" id="rx-speed">0 B/s</span>
+    <span class="tx" id="tx-speed">0 B/s</span>
+  </div>
+  <div class="status" id="status">vmbr0 · connecting…</div>
+</div>
+<script>
+const BLOCKS = ['░','▁','▂','▃','▄','▅','▆','▇','█'];
+const MAX_HIST = 30;
+const MAX_SCALE = 524288; // 512 KB — matches network-azucar.sh
+
+let rxHist = [], txHist = [];
+
+function getSpark(speed) {
+  if (speed < 256) return '░';
+  let level = Math.min(20, Math.floor(speed * 20 / MAX_SCALE));
+  // Map 0-20 levels to unicode blocks (same logic as the bash script)
+  const chars = ['░','▁','▂','▃','▄','▅','▆','▇',
+    '█','█▁','█▂','█▃','█▄','█▅','█▆','█▇',
+    '██','██▁','██▂','██▃','███'];
+  return chars[level] || '░';
+}
+
+function rxColor(speed) {
+  if (speed < 1024)   return '#6272a4';
+  if (speed < 10240)  return '#8be9fd';
+  if (speed < 102400) return '#50fa7b';
+  if (speed < 524288) return '#ffb86c';
+  return '#ff5555';
+}
+
+function txColor(speed) {
+  if (speed < 512)    return '#6272a4';
+  if (speed < 5120)   return '#ff79c6';
+  if (speed < 51200)  return '#bd93f9';
+  if (speed < 262144) return '#ffb86c';
+  return '#ff5555';
+}
+
+function fmtSpeed(b) {
+  if (b < 1024) return `${b} B/s`;
+  if (b < 1048576) return `${(b/1024).toFixed(0)} K/s`;
+  return `${(b/1048576).toFixed(2)} M/s`;
+}
+
+function renderSparks(hist, colorFn, elId) {
+  const el = document.getElementById(elId);
+  el.innerHTML = hist.map(v =>
+    `<span style="color:${colorFn(v)}">${getSpark(v)}</span>`
+  ).join('');
+}
+
+function applyPayload(p) {
+  // Use vmbr0 aggregate
+  const bridge = p.bridges.find(b => b.iface === 'vmbr0') || p.total;
+  const rx = bridge.rx ?? 0;
+  const tx = bridge.tx ?? 0;
+
+  rxHist.push(rx); if (rxHist.length > MAX_HIST) rxHist.shift();
+  txHist.push(tx); if (txHist.length > MAX_HIST) txHist.shift();
+
+  renderSparks(rxHist, rxColor, 'rx-sparks');
+  renderSparks(txHist, txColor, 'tx-sparks');
+
+  document.getElementById('rx-speed').textContent = `⬇ ${fmtSpeed(rx)}`;
+  document.getElementById('tx-speed').textContent = `${fmtSpeed(tx)} ⬆`;
+  document.getElementById('status').textContent = `vmbr0 · LIVE`;
+}
+
+function connect() {
+  const es = new EventSource('/api/stream');
+  es.onmessage = ev => {
+    try { applyPayload(JSON.parse(ev.data)); } catch(e) {}
+  };
+  es.onerror = () => { es.close(); setTimeout(connect, 2000); };
+}
+
+connect();
+</script>
+</body>
+</html>

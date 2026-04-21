@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>LAN of OZ · Mission Control</title>
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+<div class="scanlines"></div>
+<div class="vignette"></div>
+
+<header class="bar">
+  <div class="brand">
+    <span class="logo">⬢</span>
+    <span class="title">LAN <em>of</em> OZ</span>
+    <span class="sub">// MISSION CONTROL</span>
+  </div>
+  <div class="meta">
+    <span class="pill"><i class="dot live"></i> LIVE</span>
+    <span class="pill" id="host">tod.alisium.run</span>
+    <span class="pill" id="clock">--:--:--</span>
+  </div>
+</header>
+
+<main class="grid">
+
+  <!-- CENTERPIECE: total LAN throughput -->
+  <section class="center">
+    <div class="center-inner">
+      <div class="lanes">
+        <div class="lane down">
+          <div class="lane-label">INGRESS</div>
+          <div class="lane-readout" id="total-rx">0 <em>B/s</em></div>
+        </div>
+        <div class="lane up">
+          <div class="lane-label">EGRESS</div>
+          <div class="lane-readout" id="total-tx">0 <em>B/s</em></div>
+        </div>
+      </div>
+      <canvas id="total-graph" width="1400" height="260"></canvas>
+      <div class="center-foot">
+        <span>SAMPLES/S: <b>1</b></span>
+        <span>WINDOW: <b>120s</b></span>
+        <span>MODE: <b>PROC/NET/DEV</b></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRIDGES -->
+  <section class="panel bridges">
+    <header class="panel-h"><span>◈</span> BRIDGES</header>
+    <div id="bridges-row" class="bridges-row"></div>
+  </section>
+
+  <!-- CONTAINERS GRID -->
+  <section class="panel containers">
+    <header class="panel-h"><span>◇</span> CONTAINERS <small id="ct-count">--</small></header>
+    <div id="containers" class="containers-grid"></div>
+  </section>
+
+</main>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
