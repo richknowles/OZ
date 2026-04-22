@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>LAN of OZ · Mission Control</title>
 <link rel="stylesheet" href="/static/style.css" />
+<style>
+.gw-spark { font-family: ui-monospace,"JetBrains Mono","Fira Code",monospace; font-size: 14px; letter-spacing: 2px; }
+</style>
 </head>
 <body>
 
@@ -19,14 +22,57 @@
   </div>
   <div class="meta">
     <span class="pill"><i class="dot live"></i> LIVE</span>
-    <span class="pill" id="host">tod.alisium.run</span>
+    <span class="pill" id="host">tod.oz.alisium.run</span>
     <span class="pill" id="clock">--:--:--</span>
   </div>
 </header>
 
 <main class="grid">
 
-  <!-- CENTERPIECE: total LAN throughput -->
+  <div class="gateways-row">
+    <section class="gateway">
+      <div class="gw-inner">
+        <div class="gw-meta">
+          <div class="gw-title">⬡ WAN <span id="gw-wan-status" class="gw-status gw-offline">OFFLINE</span></div>
+          <div class="gw-ifaces"><span>eth0</span><span class="gw-sep">·</span><span class="dim">WAN-Gary</span></div>
+        </div>
+        <div class="gw-lanes">
+          <div class="gw-lane down">
+            <span class="gw-arrow">⬇</span>
+            <div class="gw-spark" id="gw-wan-rx-spark"></div>
+            <span class="gw-speed" id="gw-wan-rx-speed">--- B/s</span>
+          </div>
+          <div class="gw-lane up">
+            <span class="gw-arrow">⬆</span>
+            <div class="gw-spark" id="gw-wan-tx-spark"></div>
+            <span class="gw-speed" id="gw-wan-tx-speed">--- B/s</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gateway">
+      <div class="gw-inner">
+        <div class="gw-meta">
+          <div class="gw-title">⬡ LAN <span id="gw-lan-status" class="gw-status gw-offline">OFFLINE</span></div>
+          <div class="gw-ifaces"><span>br0</span><span class="gw-sep">·</span><span class="dim">EdgeRouter</span></div>
+        </div>
+        <div class="gw-lanes">
+          <div class="gw-lane down">
+            <span class="gw-arrow">⬇</span>
+            <div class="gw-spark" id="gw-lan-rx-spark"></div>
+            <span class="gw-speed" id="gw-lan-rx-speed">--- B/s</span>
+          </div>
+          <div class="gw-lane up">
+            <span class="gw-arrow">⬆</span>
+            <div class="gw-spark" id="gw-lan-tx-spark"></div>
+            <span class="gw-speed" id="gw-lan-tx-speed">--- B/s</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
   <section class="center">
     <div class="center-inner">
       <div class="lanes">
@@ -48,13 +94,11 @@
     </div>
   </section>
 
-  <!-- BRIDGES -->
   <section class="panel bridges">
     <header class="panel-h"><span>◈</span> BRIDGES</header>
     <div id="bridges-row" class="bridges-row"></div>
   </section>
 
-  <!-- CONTAINERS GRID -->
   <section class="panel containers">
     <header class="panel-h"><span>◇</span> CONTAINERS <small id="ct-count">--</small></header>
     <div id="containers" class="containers-grid"></div>
